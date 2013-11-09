@@ -1,3 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :description, :name, :notes
+  has_many :goals
+  attr_accessible :description, :name, :notes, :goal_attributes
+  accepts_nested_attributes_for :goals, allow_destroy: true
 end
