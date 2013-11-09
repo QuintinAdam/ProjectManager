@@ -1,14 +1,19 @@
-<%= simple_form_for(@project) do |f| %>
-  <%= f.error_notification %>
-
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.simple_fields_for :goals do |goal| %>
-    <%= render 'goal_fields', :f => goal %>
-  <% end %>  
-  <%= link_to_add_association 'Add Goals', f, :goals %>
-  
-  <%= f.input :notes %>
-  <%= f.button :submit %>
-
-<% end %>
+<div id="form">
+  <%= simple_form_for(@project) do |f| %>
+    <%= f.error_notification %>
+    <div class="content">
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <div id="goal">
+        <%= f.simple_fields_for :goals do |goal| %>
+          <%= render 'goal_fields', :f => goal %>
+        <% end %>
+        <div class="link">
+          <%= link_to_add_association 'Add Goals', f, :goals %>
+        </div>
+      </div>
+      <%= f.input :notes %>
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
