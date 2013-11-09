@@ -2,10 +2,10 @@
 
 one:
   goal: MyString
-  done: 
+  done: false
   project: 
 
 two:
   goal: MyString
-  done: 
+  done: false
   project: 

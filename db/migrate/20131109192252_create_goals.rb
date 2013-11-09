@@ -2,7 +2,7 @@ class CreateGoals < ActiveRecord::Migration
   def change
     create_table :goals do |t|
       t.string :goal
-      t.boolen :done
+      t.boolean :done
       t.references :project
 
       t.timestamps
