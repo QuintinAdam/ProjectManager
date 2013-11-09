@@ -1,1 +1,9 @@
-_form.html.erb
+<%= simple_form_for(@project) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :notes %>
+  <%= f.button :submit %>
+
+<% end %>

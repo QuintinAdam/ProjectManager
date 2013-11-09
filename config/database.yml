@@ -51,5 +51,5 @@ production:
   encoding: unicode
   database: ProjectManager_production
   pool: 5
-  username: quintin
+  username: projectmanager
   password:

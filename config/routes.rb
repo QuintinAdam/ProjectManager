@@ -1,5 +1,5 @@
 ProjectManager::Application.routes.draw do
-  root :to => 'conversations#index'
+  root :to => 'projects#index'
   resources :projects
 
   # The priority is based upon order of creation:
