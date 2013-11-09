@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Conversation.new(params[:project])
+    @project = Project.new(params[:project])
     if @project.save
       redirect_to @project, notice: 'Your project was created'
     else
