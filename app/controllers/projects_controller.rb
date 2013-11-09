@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @project.goals.build
+    @project.members.build
     # @project.members.build
     # @project.tasks.build
   end

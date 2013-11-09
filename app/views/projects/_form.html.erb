@@ -12,6 +12,14 @@
           <%= link_to_add_association 'Add Goals', f, :goals %>
         </div>
       </div>
+      <div id="members">
+        <%= f.simple_fields_for :members do |member| %>
+          <%= render 'member_fields', f: member %>
+        <% end %>
+        <div class="link">
+          <%= link_to_add_association 'Add Member', f, :members %>
+        </div>
+      </div>
       <%= f.input :notes %>
       <%= f.button :submit %>
     </div>
