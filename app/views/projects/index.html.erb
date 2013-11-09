@@ -1,3 +1,7 @@
-<% @projects.each do |project| %>
-  <%= @project.name %>
-<% end %>
+<div class="well well-lg">
+  <% @projects.each do |project| %>
+    <h2><%= link_to project.name, project_path(project) %></h2>
+    <p><%= project.description %></p>
+    <hr>
+  <% end %>
+</div>
