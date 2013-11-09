@@ -14,8 +14,7 @@ class ProjectsController < ApplicationController
     @project = Project.new
     @project.goals.build
     @project.members.build
-    # @project.members.build
-    # @project.tasks.build
+    @project.tasks.build
   end
 
   def edit

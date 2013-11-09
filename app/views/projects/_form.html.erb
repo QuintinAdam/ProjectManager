@@ -20,6 +20,14 @@
           <%= link_to_add_association 'Add Member', f, :members %>
         </div>
       </div>
+      <div id="tasks">
+        <%= f.simple_fields_for :tasks do |task| %>
+          <%= render 'task_fields', f: task %>
+        <% end %>
+        <div class="link">
+          <%= link_to_add_association 'Add task', f, :tasks %>
+        </div>
+      </div>
       <%= f.input :notes %>
       <%= f.button :submit %>
     </div>
