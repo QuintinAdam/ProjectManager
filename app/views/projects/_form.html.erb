@@ -3,6 +3,11 @@
 
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.simple_fields_for :goals do |goal| %>
+    <%= render 'goal_fields', :f => goal %>
+  <% end %>  
+  <%= link_to_add_association 'Add Goals', f, :goals %>
+  
   <%= f.input :notes %>
   <%= f.button :submit %>
 
