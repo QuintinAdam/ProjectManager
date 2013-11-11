@@ -1,4 +1,4 @@
-<h1><%= @project.name %></h1>
+<h1><%= @project.name.titleize %></h1>
 <p><%= @project.description %></p>
 <h3>Members</h3>
 <% @project.members.each do |m| %>
