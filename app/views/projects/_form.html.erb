@@ -2,33 +2,46 @@
   <%= simple_form_for(@project) do |f| %>
     <%= f.error_notification %>
     <div class="content">
-      <%= f.input :name %>
-      <%= f.input :description %>
+      <h3>Project Name:</h3>
+      <%= f.input :name, label: false %>
+      <h3>Project Description:</h3>
+      <%= f.input :description, label: false %>
+      <h3>Goals:</h3>
       <div id="goal">
         <%= f.simple_fields_for :goals do |goal| %>
           <%= render 'goal_fields', :f => goal %>
         <% end %>
+        <br>
         <div class="link">
           <%= link_to_add_association 'Add Goals', f, :goals %>
         </div>
       </div>
+      <hr>
+      <h3>Team Members:</h3>
       <div id="members">
         <%= f.simple_fields_for :members do |member| %>
           <%= render 'member_fields', f: member %>
         <% end %>
+        <br>
         <div class="link">
           <%= link_to_add_association 'Add Member', f, :members %>
         </div>
       </div>
+      <hr>
+      <h3>Tasks:</h3>
       <div id="tasks">
         <%= f.simple_fields_for :tasks do |task| %>
           <%= render 'task_fields', f: task %>
         <% end %>
+        <br>
         <div class="link">
           <%= link_to_add_association 'Add Task', f, :tasks %>
         </div>
       </div>
-      <%= f.input :notes %>
+      <hr>
+      <h3>Notes:</h3>
+      <%= f.input :notes, label: false %>
+      <br>
       <%= f.button :submit %>
     </div>
   <% end %>
