@@ -4,45 +4,48 @@
     <div class="content">
       <h3>Project Name:</h3>
       <%= f.input :name, label: false %>
-      <h3>Project Description:</h3>
-      <%= f.input :description, label: false %>
-      <h3>Goals:</h3>
-      <div id="goal">
-        <%= f.simple_fields_for :goals do |goal| %>
-          <%= render 'goal_fields', :f => goal %>
-        <% end %>
-        <br>
-        <div class="link">
-          <%= link_to_add_association 'Add Goals', f, :goals %>
-        </div>
-      </div>
-      <hr>
-      <h3>Team Members:</h3>
+      
       <div id="members">
+        <h3>Team Members:</h3>
         <%= f.simple_fields_for :members do |member| %>
           <%= render 'member_fields', f: member %>
         <% end %>
-        <br>
+        
         <div class="link">
-          <%= link_to_add_association 'Add Member', f, :members %>
+          <%= link_to_add_association 'Add Member', f, :members, :class => "btn btn-primary" %>
         </div>
       </div>
       <hr>
-      <h3>Tasks:</h3>
+      <h3>Project Description:</h3>
+      <%= f.input :description, label: false %>
+      
+      <div id="goals">
+        <h3>Goals:</h3>
+        <%= f.simple_fields_for :goals do |goal| %>
+          <%= render 'goal_fields', :f => goal %>
+        <% end %>
+        
+        <div class="link">
+          <%= link_to_add_association 'Add Goals', f, :goals, :class => "btn btn-primary" %>
+        </div>
+      </div>
+      <hr>
+      
       <div id="tasks">
+        <h3>Tasks:</h3>
         <%= f.simple_fields_for :tasks do |task| %>
           <%= render 'task_fields', f: task %>
         <% end %>
-        <br>
+        
         <div class="link">
-          <%= link_to_add_association 'Add Task', f, :tasks %>
+          <%= link_to_add_association 'Add Task', f, :tasks, :class => "btn btn-primary" %>
         </div>
       </div>
       <hr>
       <h3>Notes:</h3>
       <%= f.input :notes, label: false %>
       <br>
-      <%= f.button :submit %>
+      <%= f.button :submit, :class => "btn btn-success" %>
     </div>
   <% end %>
 </div>
