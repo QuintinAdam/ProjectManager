@@ -1,13 +1,14 @@
 class ProjectsController < ApplicationController
 
-  before_filter :find_project, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_project, :only => [:edit, :update, :destroy]
 
   def index
     @projects = Project.all
   end
 
   def show
-
+    @project = Project.find(params[:id])
+    @project.tasks.order("position ASC")
   end
 
   def new
@@ -44,5 +45,15 @@ class ProjectsController < ApplicationController
 
   def find_project
     @project = Project.find(params[:id])
+  end
+ 
+  def sort
+    # find the project
+    project = Project.find(params[:id])
+    params[:task].each_with_index do |id, index|
+      project.tasks.find(id).set_list_position(index+1)
+      # Project.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true
   end
 end

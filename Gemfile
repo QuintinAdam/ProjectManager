@@ -1,15 +1,40 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
+gem 'rails', '3.2.15'
 gem 'simple_form'
-
-
+gem 'devise'
+gem 'figaro'
+gem "cocoon"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem "cocoon"
 
+
+group :development do
+  gem 'powder'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'xray-rails'
+  gem 'guard'
+  gem 'rb-fsevent', require: false
+  gem 'guard-pow'
+  gem 'guard-minitest'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  gem 'ruby_gntp'
+end
+
+group :development, :test do
+  gem 'pry-rails'
+  gem "letter_opener"
+  gem "minitest-rails", github: 'blowmage/minitest-rails'
+  gem 'factory_girl_rails', '>= 4.2.0'
+  gem 'ffaker'
+  gem "email_spec"
+  gem 'minitest-matchers'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -24,6 +49,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'acts_as_list'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

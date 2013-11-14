@@ -1,9 +1,12 @@
 <h1><%= @project.name.titleize %></h1>
-<p><%= simple_format(@project.description) %></p>
-<h3>Members</h3>
-<% @project.members.each do |m| %>
-  <p><%= m.name %> | <%= m.role %></p>
-<% end %>  
+<div class="inline">
+  <p>Members: 
+  <% @project.members.each do |m| %>
+    <%= m.name %> | <%= m.role %>.
+  <% end %> 
+  </p>
+</div>  
+<p><%= simple_format(@project.description) %></p>  
 
 <h3>Goals</h3>
 <ul>
@@ -14,12 +17,21 @@
 
 
 <h3>Tasks</h3>
-<ul>
+<ul id="sort_tasks" data-update-url="<%= "/projects/#{@project.id}/sort" %>">
+  <%= hidden_field_tag 'project_id', @project.id %>
 <% @project.tasks.each do |t| %>
-  <% if t.done %>
-    <li class="done"><%= t.task %></li>  
+  <% if t.done? %>
+    <div class="done">
+      <%= content_tag_for :li, t do %>
+        <%= t.task %> | <%= t.position %> <!-- the position tag here is just for tests remove latter -->
+      <% end %>
+    </div>
   <% else %>
-    <li><%= t.task %></li>
+      <div>
+        <%= content_tag_for :li, t do %>
+          <%= t.task %> | <%= t.position %>
+        <% end %>
+      </div> 
   <% end %>
 <% end %>  
 </ul> 
