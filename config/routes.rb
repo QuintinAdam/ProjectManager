@@ -1,7 +1,9 @@
 ProjectManager::Application.routes.draw do
-  devise_for :users
-
   root :to => 'projects#index'
+  get "home/index"
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  resources :users
+  
   resources :projects do
     member { post :sort }
   end
