@@ -3,8 +3,11 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.15'
 gem 'simple_form'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-github'
 gem 'figaro'
 gem "cocoon"
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
