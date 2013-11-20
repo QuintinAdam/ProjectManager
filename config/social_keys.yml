@@ -5,8 +5,8 @@ development:
   # twitter_key: "Enter your keys here. Check Read me file to know how to get keys"
   # twitter_secret: "Enter your keys here. Check Read me file to know how to get keys"
 
-  github_key: 980b6c3075201c040806
-  github_secret: 0072aced170973e50c04e7989a48aa27ea5352c8
+  github_key: 24eb9f40cacbd565293a
+  github_secret: e6d619037f2be9268b9005a20ed4c7e9fc70936d
 
   # linkedin_key: "Enter your keys here. Check Read me file to know how to get keys"
   # linkedin_secret: "Enter your keys here. Check Read me file to know how to get keys"

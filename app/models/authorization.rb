@@ -6,6 +6,8 @@ class Authorization < ActiveRecord::Base
   end
 
   def fetch_details_from_github
+    # self.username = 
+    # self.
   end
 
   # def fetch_details_from_facebook
