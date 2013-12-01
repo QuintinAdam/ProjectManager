@@ -14,3 +14,13 @@
 .inline{
   display: inline;
 }
+
+#project li{
+  background-color: #eee;
+  padding: 5px;
+  border-top: 1px solid black;
+  list-style: none; 
+}
+#project li:last-child{
+  border-bottom: 1px solid black;
+}

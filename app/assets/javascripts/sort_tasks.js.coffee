@@ -1,4 +1,4 @@
-jQuery ->
+$ ->
   $('#sort_tasks').sortable
     axis: 'y'
     update: ->

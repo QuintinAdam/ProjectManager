@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :authorizations
+  has_many :projects
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :omniauthable, :validatable
 
@@ -15,10 +16,10 @@ class User < ActiveRecord::Base
     else
       super
     end
-  end
+  end 
 
   def self.from_omniauth(auth, current_user)
-    authorization = Authorization.where(:provider => auth.provider, :uid => auth.uid.to_s, :token => auth.credentials.token, :secret => auth.credentials.secret).first_or_initialize
+    authorization = Authorization.where(:provider => auth.provider, :uid => auth.uid.to_s).first_or_initialize
     if authorization.user.blank?
       user = current_user.nil? ? User.where('email = ?', auth["info"]["email"]).first : current_user
       if user.blank?

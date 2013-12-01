@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @project.tasks.order("position ASC")
+    @project.tasks.order(position: :desc)
   end
 
   def new

@@ -5,11 +5,13 @@ gem 'simple_form'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'omniauth-facebook'
 gem 'figaro'
 gem "cocoon"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
+gem 'slim'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -29,6 +31,10 @@ group :development do
   gem 'guard-livereload'
   gem 'rack-livereload'
   gem 'ruby_gntp'
+  gem "slim-rails"
+  gem 'haml2slim'
+  gem 'html2haml'
+  gem 'quiet_assets'
 end
 
 group :development, :test do

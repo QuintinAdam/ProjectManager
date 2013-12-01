@@ -1,4 +1,5 @@
 <h1><%= @project.name.titleize %></h1>
+<div class="well well-lg" id="project">
 <div class="inline">
   <p>Members: 
   <% @project.members.each do |m| %>
@@ -21,23 +22,19 @@
   <%= hidden_field_tag 'project_id', @project.id %>
 <% @project.tasks.each do |t| %>
   <% if t.done? %>
-    <div class="done">
-      <%= content_tag_for :li, t do %>
-        <%= t.task %> | <%= t.position %> <!-- the position tag here is just for tests remove latter -->
-      <% end %>
-    </div>
+    <%= content_tag :li, :class => "done" do  %>
+      <%= t.task %>
+    <% end %>
   <% else %>
-      <div>
-        <%= content_tag_for :li, t do %>
-          <%= t.task %> | <%= t.position %>
-        <% end %>
-      </div> 
+    <%= content_tag :li do  %>
+      <%= t.task %>
+    <% end %>
   <% end %>
 <% end %>  
 </ul> 
 
 <h3>Notes</h3>
 <p><%= simple_format(@project.notes) %></p>
-
+</div>
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

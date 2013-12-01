@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  belong to :user
   has_many :goals
   has_many :tasks
   has_many :members
