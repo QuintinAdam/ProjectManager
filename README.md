@@ -1,5 +1,7 @@
 #TeamProjectManagmentTool:
 
+Hackaton project 
+
 ###Description:
 To make organizing and starting a project with a team or by yourself fast and simple.
 
